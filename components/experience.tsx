@@ -1,31 +1,26 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 export default function Experience() {
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "TechCorp Inc.",
-      period: "2021 - Present",
+      title: "Fullstack Developer Intern",
+      company: "HiddenLayer Pvt. Ltd.",
+      period: "Aug, 2024 - Present",
       description:
-        "Led the frontend development team in building a complex SaaS platform using React, TypeScript, and GraphQL. Implemented CI/CD pipelines and improved performance by 40%.",
+        "Tracked and reported website bugs to developers for timely resolution. Collaborated with the Marketing Manager to execute SEO strategies and improve website visibility."
+
     },
     {
-      title: "Frontend Developer",
-      company: "WebSolutions LLC",
-      period: "2018 - 2021",
+      title: "Assistant Website Manager",
+      company: "Thames International College",
+      period: "April, 2023 — November, 2023",
       description:
-        "Developed responsive web applications for clients across various industries. Worked with React, Redux, and CSS-in-JS libraries to create pixel-perfect UIs.",
+        "",
     },
-    {
-      title: "Junior Web Developer",
-      company: "Digital Agency",
-      period: "2016 - 2018",
-      description:
-        "Built and maintained websites for small to medium businesses. Worked with HTML, CSS, JavaScript, and jQuery to create interactive web experiences.",
-    },
-  ]
+    
+  ];
 
   return (
     <motion.section
@@ -51,7 +46,9 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className={`relative pl-8 border-l-2 border-primary ${index !== experiences.length - 1 ? "pb-8" : ""}`}
+              className={`relative pl-8 border-l-2 border-primary ${
+                index !== experiences.length - 1 ? "pb-8" : ""
+              }`}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -67,7 +64,9 @@ export default function Experience() {
               <div className="space-y-2">
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
                   <h3 className="text-xl font-semibold">{exp.title}</h3>
-                  <span className="text-sm text-muted-foreground">{exp.period}</span>
+                  <span className="text-sm text-muted-foreground">
+                    {exp.period}
+                  </span>
                 </div>
                 <h4 className="text-primary font-medium">{exp.company}</h4>
                 <p className="text-muted-foreground">{exp.description}</p>
@@ -77,6 +76,5 @@ export default function Experience() {
         </div>
       </div>
     </motion.section>
-  )
+  );
 }
-

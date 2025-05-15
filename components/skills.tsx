@@ -9,12 +9,19 @@ export default function Skills() {
     { name: "TypeScript", value: 90 },
     { name: "Tailwind CSS", value: 85 },
     { name: "Next.js", value: 80 },
+    { name: "Node.js", value: 70 },
+    { name: "Express.js", value: 80 },
+    { name: "Redux.js", value: 70 },
+    { name: "MongoDB", value: 65 },
   ]
 
   const otherSkills = [
     { name: "UI/UX Design", value: 75 },
-    { name: "Node.js", value: 70 },
-    { name: "GraphQL", value: 65 },
+    { name: "Figma", value: 70 },
+    { name: "WordPress", value: 80 },
+    { name: "Wagtail/Payload CMS", value: 70 },
+    { name: "AWS", value: 60 },
+    { name: "Git/Github", value: 85 },
     { name: "Testing (Jest, Cypress)", value: 75 },
   ]
 
@@ -45,7 +52,7 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-xl font-semibold">Frontend Development</h3>
+          <h3 className="text-xl font-semibold">Programming Skills</h3>
           <div className="space-y-3">
             {frontendSkills.map((skill, index) => (
               <motion.div

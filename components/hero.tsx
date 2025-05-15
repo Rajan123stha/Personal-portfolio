@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, Code, Code2, Download, ExternalLink } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { TypewriterEffect } from "@/components/ui/typewriter-effect"
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Code, Code2, Download, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
 export default function Hero() {
   const words = [
@@ -21,10 +21,10 @@ export default function Hero() {
     {
       text: "Innovate.",
     },
-  ]
+  ];
 
   return (
-    <section className="relative overflow-hidden py-20 md:py-32 lg:py-40">
+    <section className="relative overflow-hidden py-10 md:py-16 lg:py-20 md:px-6 px-4">
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-20 blur-3xl">
@@ -81,24 +81,27 @@ export default function Hero() {
 
             <div className="space-y-4">
               <motion.h1
-                className="text-4xl md:text-6xl font-bold tracking-tight"
+                className="text-3xl md:text-5xl font-bold tracking-tight"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                Hi, I'm{" "}
+                Hi <span className="wave">👋</span> , I'm{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
-                  John Doe
+                  Rajan Shrestha
                 </span>
               </motion.h1>
 
               <motion.div
-                className="text-2xl md:text-3xl font-medium text-muted-foreground"
+                className="text-2xl md:text-2xl font-medium text-muted-foreground"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <TypewriterEffect words={words} className="text-xl md:text-2xl" />
+                <TypewriterEffect
+                  words={words}
+                  className="text-xl md:text-2xl"
+                />
               </motion.div>
             </div>
 
@@ -108,8 +111,9 @@ export default function Hero() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              I craft responsive websites where technology meets creativity. Frontend developer who loves building
-              exceptional digital experiences.
+              I craft responsive websites where technology meets creativity.
+              Frontend developer who loves building exceptional digital
+              experiences.
             </motion.p>
 
             <motion.div
@@ -138,10 +142,14 @@ export default function Hero() {
                 size="lg"
                 className="group rounded-full border-primary/20 hover:border-primary/50 transition-colors"
               >
-                <Link href="#" className="flex items-center gap-2">
+                <a
+                  href="/Rajan Shrestha Resume.pdf"
+                  download
+                  className="flex items-center gap-2"
+                >
                   <Download className="h-4 w-4" />
                   <span>Download CV</span>
-                </Link>
+                </a>
               </Button>
             </motion.div>
 
@@ -160,7 +168,8 @@ export default function Hero() {
                 </div>
               </div>
               <div className="text-sm">
-                <span className="font-medium">5+ years</span> of experience in frontend development
+                <span className="font-medium">1+ years</span> of experience in
+                frontend development
               </div>
             </motion.div>
           </motion.div>
@@ -192,7 +201,7 @@ export default function Hero() {
 
                 {/* Floating badges */}
                 <motion.div
-                  className="absolute -right-4 top-10 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
+                  className="absolute -right-2 top-10 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 }}
@@ -202,7 +211,7 @@ export default function Hero() {
                 </motion.div>
 
                 <motion.div
-                  className="absolute -left-6 top-1/2 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
+                  className="absolute -left-6 top-1/3 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.7 }}
@@ -210,9 +219,18 @@ export default function Hero() {
                   <span className="flex h-2 w-2 rounded-full bg-blue-500"></span>
                   <span className="text-xs font-medium">TypeScript</span>
                 </motion.div>
+                <motion.div
+                  className="absolute -right-4 bottom-1/4 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.7 }}
+                >
+                  <span className="flex h-2 w-2 rounded-full bg-blue-500"></span>
+                  <span className="text-xs font-medium">JavaScript</span>
+                </motion.div>
 
                 <motion.div
-                  className="absolute -bottom-2 left-10 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
+                  className="absolute -bottom-0 left-10 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
@@ -223,12 +241,10 @@ export default function Hero() {
               </div>
 
               {/* Featured project card */}
-              
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
-

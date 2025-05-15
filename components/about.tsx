@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { MapPin } from "lucide-react"
+import { motion } from "framer-motion";
+import { MapPin } from "lucide-react";
 
 export default function About() {
   return (
@@ -26,9 +26,7 @@ export default function About() {
 
         <div className="max-w-3xl mx-auto space-y-4">
           {[
-            "I'm a passionate frontend developer with 5+ years of experience creating modern and responsive web applications. I specialize in React, TypeScript, and modern CSS frameworks like Tailwind.",
-            "My journey in web development started when I built my first website in college. Since then, I've worked with startups and established companies to deliver high-quality digital products.",
-            "When I'm not coding, you can find me hiking, reading tech blogs, or contributing to open-source projects.",
+            "Frontend developer with expertise in HTML, CSS, and JavaScript, proficient in React, and a solid foundation in Express an MongoDB. Experienced in building websites with WordPress and Wagtail as backends and deploying them on AWS. Passionate about creating seamless web experiences, staying updated with industry trends, and excelling in collaborative environments.",
           ].map((paragraph, index) => (
             <motion.p
               key={index}
@@ -49,11 +47,10 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <MapPin className="h-4 w-4" />
-            <span>San Francisco, CA</span>
+            <span>Kathmandu, Nepal</span>
           </motion.div>
         </div>
       </div>
     </motion.section>
-  )
+  );
 }
-
