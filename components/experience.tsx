@@ -9,17 +9,15 @@ export default function Experience() {
       company: "HiddenLayer Pvt. Ltd.",
       period: "Aug, 2024 - Present",
       description:
-        "Tracked and reported website bugs to developers for timely resolution. Collaborated with the Marketing Manager to execute SEO strategies and improve website visibility."
-
+        "Designed and developed a fast, responsive frontend using React.js and Tailwind CSS, integrated with Payload CMS for dynamic content updates. Deployed the app on AWS S3 with CloudFront and SSL, optimizing performance, security, and editorial workflows. Translated Figma designs into pixel-perfect UI, enhancing UX and reducing development time.",
     },
     {
       title: "Assistant Website Manager",
       company: "Thames International College",
       period: "April, 2023 — November, 2023",
       description:
-        "",
+        "Tracked and reported website bugs to developers for timely resolution. Collaborated with the Marketing Manager to execute SEO strategies and improve website visibility.",
     },
-    
   ];
 
   return (

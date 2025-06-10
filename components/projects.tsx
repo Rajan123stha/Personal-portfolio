@@ -38,8 +38,8 @@ export default function Projects() {
         "This allows students to access academic resources like notes, syllabi, and past papers. Admin dashboard for content management and advanced search and filter features.",
       skills: ["React", "Supabase", "Tailwind CSS", "TypeScript"],
       category: "fullstack",
-      demoLink: "https://thankful-pond-0e378f91e.6.azurestaticapps.net/",
-      codeLink: "https://github.com/Rajan123stha/student-study-point",
+      demoLink: "https://student-study-point.vercel.app/",
+      codeLink: "https://github.com/Rajan123stha/EduResources",
     },
     {
       title: "Resume Analyzer Tool",
@@ -48,8 +48,8 @@ export default function Projects() {
         "Built a web-based tool that compares resumes with job descriptions to identify missing keywords and suggest improvements using natural language processing (NLP).",
       skills: ["React", "NLP", "Tailwind CSS", "TypeScript"],
       category: "ai",
-      demoLink: "https://victorious-mud-03e11ed00.6.azurestaticapps.net/",
-      codeLink: "https://github.com/Rajan123stha/resume-analyzer",
+      demoLink: "https://resume-analyzer-kohl.vercel.app/",
+      codeLink: "https://github.com/Rajan123stha/ResumeAnalyzer",
     },
     {
       title: "WordPress Theme for Portfolio",
@@ -78,9 +78,19 @@ export default function Projects() {
       description:
         "Project to help hostel administrators manage students, rooms, and assignments. Included features like room allocation, student records, and dashboard.",
       skills: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
-      category: "Academic Projects",
+      category: "fullstack",
       codeLink: "https://github.com/Rajan123stha/Hostel-Management-System",
       demoLink: "#",
+    },
+    {
+      title: "Consultancy Website",
+      image: "image/consultancy.png",
+      description:
+        "Developed a scalable and respoisive website for consultancy, featuring a user-friendly interface and easy navigation. The website includes sections for destinations, blogs, and contact information.",
+      skills: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+      category: "react",
+      codeLink: "#",
+      demoLink: "https://staredum.com/",
     },
   ];
 

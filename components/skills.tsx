@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Progress } from "@/components/ui/progress"
+import { motion } from "framer-motion";
+import { Progress } from "@/components/ui/progress";
 
 export default function Skills() {
   const frontendSkills = [
@@ -11,9 +11,9 @@ export default function Skills() {
     { name: "Next.js", value: 80 },
     { name: "Node.js", value: 70 },
     { name: "Express.js", value: 80 },
-    { name: "Redux.js", value: 70 },
+    { name: "Redux", value: 70 },
     { name: "MongoDB", value: 65 },
-  ]
+  ];
 
   const otherSkills = [
     { name: "UI/UX Design", value: 75 },
@@ -23,7 +23,7 @@ export default function Skills() {
     { name: "AWS", value: 60 },
     { name: "Git/Github", value: 85 },
     { name: "Testing (Jest, Cypress)", value: 75 },
-  ]
+  ];
 
   return (
     <motion.section
@@ -116,6 +116,5 @@ export default function Skills() {
         </motion.div>
       </div>
     </motion.section>
-  )
+  );
 }
-

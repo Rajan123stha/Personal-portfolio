@@ -36,7 +36,17 @@ export default function Header() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <Link href="/">DevRajan</Link>
+          <Link
+            href="/"
+            className="text-2xl font-bold tracking-wide group inline-flex items-center space-x-1"
+          >
+            <span className="text-indigo-600 group-hover:text-indigo-800 transition duration-300">
+              Dev
+            </span>
+            <span className="text-gray-900 group-hover:translate-x-1 transition-transform duration-300">
+              Rajan
+            </span>
+          </Link>
         </motion.div>
 
         <nav className="hidden md:flex gap-6">
