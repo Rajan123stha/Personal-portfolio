@@ -36,7 +36,7 @@ export default function Projects() {
       image: "image/studypoint.png",
       description:
         "This allows students to access academic resources like notes, syllabi, and past papers. Admin dashboard for content management and advanced search and filter features.",
-      skills: ["React", "Supabase", "Tailwind CSS", "TypeScript"],
+      skills: ["React", "Express", "Node", "Tailwind CSS", "TypeScript"],
       category: "fullstack",
       demoLink: "https://student-study-point.vercel.app/",
       codeLink: "https://github.com/Rajan123stha/EduResources",
