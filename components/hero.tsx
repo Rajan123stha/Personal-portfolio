@@ -3,136 +3,167 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Code, Code2, Download, ExternalLink } from "lucide-react";
+import { ArrowRight, Download, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
-export default function Hero() {
-  const words = [
-    {
-      text: "Build.",
-    },
-    {
-      text: "Design.",
-    },
-    {
-      text: "Deploy.",
-    },
-    {
-      text: "Innovate.",
-    },
-  ];
+const words = [
+  { text: "Build." },
+  { text: "Design." },
+  { text: "Deploy." },
+  { text: "Innovate." },
+];
 
+const floatingBadges = [
+  { label: "React", color: "bg-sky-500", position: "absolute -right-4 top-12" },
+  {
+    label: "TypeScript",
+    color: "bg-blue-600",
+    position: "absolute -left-8 top-1/3",
+  },
+  {
+    label: "Next.js",
+    color: "bg-foreground",
+    position: "absolute -bottom-2 left-8",
+  },
+  {
+    label: "AWS",
+    color: "bg-orange-500",
+    position: "absolute -right-6 bottom-1/4",
+  },
+];
+
+export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-10 md:py-16 lg:py-20 md:px-6 px-4">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 opacity-20 blur-3xl">
-          <div className="aspect-square h-[30rem] rounded-full bg-gradient-to-tr from-primary to-purple-500" />
-        </div>
-        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 opacity-20 blur-3xl">
-          <div className="aspect-square h-[30rem] rounded-full bg-gradient-to-tr from-blue-500 to-primary" />
-        </div>
+    <section className="relative overflow-hidden py-8 md:py-12">
+      {/* Background blobs */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 -right-40 h-[600px] w-[600px] rounded-full bg-primary/8 blur-[120px]" />
+        <div className="absolute -bottom-40 -left-40 h-[500px] w-[500px] rounded-full bg-blue-500/6 blur-[100px]" />
+        {/* Subtle dot-grid */}
         <svg
-          className="absolute right-0 top-0 opacity-10 md:opacity-20"
-          width="400"
-          height="400"
-          viewBox="0 0 400 400"
-          fill="none"
+          className="absolute inset-0 h-full w-full opacity-[0.025]"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clipPath="url(#clip0_2_2)">
-            <path d="M400 0H0V400H400V0Z" fill="url(#paint0_radial_2_2)" />
-          </g>
           <defs>
-            <radialGradient
-              id="paint0_radial_2_2"
-              cx="0"
-              cy="0"
-              r="1"
-              gradientUnits="userSpaceOnUse"
-              gradientTransform="translate(200 200) rotate(90) scale(200)"
+            <pattern
+              id="dots"
+              x="0"
+              y="0"
+              width="24"
+              height="24"
+              patternUnits="userSpaceOnUse"
             >
-              <stop stopColor="white" />
-              <stop offset="0.569" stopColor="white" stopOpacity="0.569" />
-              <stop offset="0.993" stopColor="white" stopOpacity="0" />
-            </radialGradient>
-            <clipPath id="clip0_2_2">
-              <rect width="400" height="400" fill="white" />
-            </clipPath>
+              <circle cx="2" cy="2" r="1.5" fill="currentColor" />
+            </pattern>
           </defs>
+          <rect width="100%" height="100%" fill="url(#dots)" />
         </svg>
-        <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
       </div>
 
-      <div className="container relative">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left column - Text content */}
+      <div className="container relative max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* ── LEFT: text ── */}
           <motion.div
             className="flex flex-col space-y-8"
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.55 }}
           >
-            <div className="inline-flex items-center rounded-full border px-3 py-1 text-sm">
-              <span className="flex h-2 w-2 rounded-full bg-primary mr-2"></span>
-              <span>Available for work</span>
-            </div>
+            {/* Availability pill */}
+            <motion.div
+              className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-muted/50 px-3.5 py-1.5 text-xs font-medium text-muted-foreground"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+              </span>
+              Available for work
+            </motion.div>
 
-            <div className="space-y-4">
+            {/* Name + typewriter */}
+            <div className="space-y-3">
               <motion.h1
-                className="text-3xl md:text-5xl font-bold tracking-tight"
+                className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
               >
-                Hi <span className="wave">👋</span> , I'm{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
+                Hi 👋, I'm{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-500 to-primary bg-[length:200%_auto] animate-gradient">
                   Rajan Shrestha
                 </span>
               </motion.h1>
 
               <motion.div
-                className="text-2xl md:text-2xl font-medium text-muted-foreground"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
               >
                 <TypewriterEffect
                   words={words}
-                  className="text-xl md:text-2xl"
+                  className="text-xl md:text-2xl text-muted-foreground"
                 />
               </motion.div>
             </div>
 
+            {/* Bio */}
             <motion.p
-              className="text-muted-foreground max-w-md text-lg"
+              className="text-base text-muted-foreground max-w-lg leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              I craft responsive websites where technology meets creativity.
-              Frontend developer who loves building exceptional digital
-              experiences.
+              I specialize in{" "}
+              <span className="text-foreground font-medium">
+                React & Next.js
+              </span>
+              , modern CMS architectures (Wagtail / Payload), and{" "}
+              <span className="text-foreground font-medium">
+                AWS deployment
+              </span>{" "}
+              — helping businesses launch fast, manage content easily, and scale
+              reliably.
             </motion.p>
 
+            {/* Open to tags */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 pt-4"
-              initial={{ opacity: 0, y: 20 }}
+              className="flex flex-wrap gap-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.45 }}
+            >
+              {["Frontend / Fullstack roles", "Freelance projects"].map(
+                (tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary"
+                  >
+                    <span className="h-1 w-1 rounded-full bg-primary" />
+                    {tag}
+                  </span>
+                ),
+              )}
+            </motion.div>
+
+            {/* CTAs */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-3 pt-1"
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
               <Button
                 asChild
                 size="lg"
-                className="group relative overflow-hidden rounded-full px-6 py-2 shadow-lg transition-all hover:shadow-primary/30"
+                className="group rounded-full px-6 shadow-md hover:shadow-primary/25 transition-shadow"
               >
-                <Link href="#contact">
-                  <span className="relative z-10 flex items-center gap-2">
-                    Contact Me
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                  <span className="absolute inset-0 z-0 bg-gradient-to-r from-primary to-blue-600 transition-all duration-500" />
+                <Link href="#contact" className="flex items-center gap-2">
+                  Contact Me
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
 
@@ -140,7 +171,7 @@ export default function Hero() {
                 variant="outline"
                 asChild
                 size="lg"
-                className="group rounded-full border-primary/20 hover:border-primary/50 transition-colors"
+                className="group rounded-full border-border hover:border-primary/50 transition-colors"
               >
                 <a
                   href="/Rajan Shrestha Resume.pdf"
@@ -148,50 +179,48 @@ export default function Hero() {
                   className="flex items-center gap-2"
                 >
                   <Download className="h-4 w-4" />
-                  <span>Download CV</span>
+                  Download CV
                 </a>
               </Button>
             </motion.div>
 
+            {/* Location + exp */}
             <motion.div
-              className="flex items-center gap-4 text-muted-foreground"
+              className="flex items-center gap-5 text-sm text-muted-foreground pt-1"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              <div className="flex -space-x-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted">
-                  <Code className="h-4 w-4" />
-                </div>
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-muted">
-                  <Code2 className="h-4 w-4" />
-                </div>
+              <div className="flex items-center gap-1.5">
+                <MapPin className="h-3.5 w-3.5" />
+                Kathmandu, Nepal
               </div>
-              <div className="text-sm">
-                <span className="font-medium">1+ years</span> of experience in
-                frontend development
+              <div className="h-3 w-px bg-border" />
+              <div>
+                <span className="font-semibold text-foreground">1+</span> yr
+                frontend experience
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right column - Image */}
+          {/* ── RIGHT: image ── */}
           <motion.div
             className="relative flex justify-center lg:justify-end"
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.55, delay: 0.2 }}
           >
             <div className="relative">
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -left-6 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
-              <div className="absolute -bottom-6 -right-6 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
+              {/* Glow rings */}
+              <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl scale-110" />
+              <div className="absolute inset-0 rounded-full bg-blue-500/8 blur-2xl scale-125" />
 
-              {/* Profile image with frame */}
-              <div className="relative z-10 h-72 w-72 md:h-80 md:w-80 lg:h-96 lg:w-96 rounded-full border-4 border-background bg-gradient-to-br from-background to-muted p-2 shadow-2xl">
-                <div className="h-full w-full overflow-hidden rounded-full bg-background">
+              {/* Avatar frame */}
+              <div className="relative z-10 h-72 w-72 md:h-80 md:w-80 lg:h-[380px] lg:w-[380px] rounded-full border-2 border-border bg-muted p-1.5 shadow-2xl">
+                <div className="h-full w-full overflow-hidden rounded-full">
                   <Image
                     src="/placeholder.svg?height=400&width=400"
-                    alt="Profile"
+                    alt="Rajan Shrestha"
                     width={400}
                     height={400}
                     className="h-full w-full object-cover"
@@ -199,52 +228,42 @@ export default function Hero() {
                   />
                 </div>
 
-                {/* Floating badges */}
-                <motion.div
-                  className="absolute -right-2 top-10 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  <span className="flex h-2 w-2 rounded-full bg-green-500"></span>
-                  <span className="text-xs font-medium">React</span>
-                </motion.div>
-
-                <motion.div
-                  className="absolute -left-6 top-1/3 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.7 }}
-                >
-                  <span className="flex h-2 w-2 rounded-full bg-blue-500"></span>
-                  <span className="text-xs font-medium">TypeScript</span>
-                </motion.div>
-                <motion.div
-                  className="absolute -right-4 bottom-1/4 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.7 }}
-                >
-                  <span className="flex h-2 w-2 rounded-full bg-blue-500"></span>
-                  <span className="text-xs font-medium">JavaScript</span>
-                </motion.div>
-
-                <motion.div
-                  className="absolute -bottom-0 left-10 flex items-center gap-2 rounded-full border bg-background px-3 py-1.5 shadow-lg"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                >
-                  <span className="flex h-2 w-2 rounded-full bg-primary"></span>
-                  <span className="text-xs font-medium">Next.js</span>
-                </motion.div>
+                {/* Floating tech badges */}
+                {floatingBadges.map(({ label, color, position }, i) => (
+                  <motion.div
+                    key={label}
+                    className={`${position} flex items-center gap-1.5 rounded-full border border-border bg-background px-3 py-1.5 shadow-md`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      delay: 0.65 + i * 0.1,
+                      type: "spring",
+                      stiffness: 200,
+                    }}
+                  >
+                    <span className={`h-2 w-2 rounded-full ${color}`} />
+                    <span className="text-xs font-semibold">{label}</span>
+                  </motion.div>
+                ))}
               </div>
-
-              {/* Featured project card */}
             </div>
           </motion.div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes gradient {
+          0% {
+            background-position: 0% center;
+          }
+          100% {
+            background-position: 200% center;
+          }
+        }
+        .animate-gradient {
+          animation: gradient 4s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }
