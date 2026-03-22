@@ -82,12 +82,18 @@ export default function Header() {
           >
             <Link
               href="/"
-              className="group inline-flex items-center gap-0.5 text-xl font-bold tracking-tight"
+              className="inline-flex items-center font-mono text-[22px] font-semibold tracking-tight"
             >
-              <span className="text-primary transition-colors group-hover:text-primary/80">
-                Dev
+              <span className="bg-gradient-to-b from-indigo-500 to-violet-500 bg-clip-text text-[30px] font-light text-transparent">{`{`}</span>
+              <span className="flex items-center gap-1.5 px-1">
+                <span className="border-r border-border pr-1.5 text-[14px] uppercase tracking-widest text-foreground">
+                  dev
+                </span>
+                <span className="bg-gradient-to-r from-indigo-500 to-pink-500 bg-clip-text text-[22px] font-bold text-transparent">
+                  Rajan
+                </span>
               </span>
-              <span className="text-foreground">Rajan</span>
+              <span className="bg-gradient-to-b from-indigo-500 to-violet-500 bg-clip-text text-[30px] font-light text-transparent">{`}`}</span>
             </Link>
           </motion.div>
 

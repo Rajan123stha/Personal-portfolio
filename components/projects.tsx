@@ -54,7 +54,7 @@ const projects = [
       "Academic resource platform with notes, syllabi, and past papers. Includes admin dashboard for content management and advanced search and filter features.",
     skills: ["React", "Express", "Node", "Tailwind CSS", "TypeScript"],
     category: "fullstack",
-    demoLink: "https://student-study-point.vercel.app/",
+    demoLink: "https://edu-resources-mocha.vercel.app/",
     codeLink: "https://github.com/Rajan123stha/EduResources",
   },
 
@@ -107,7 +107,6 @@ const tabs = [
   { value: "react", label: "React" },
   { value: "fullstack", label: "Full Stack" },
   { value: "ai", label: "AI / ML" },
-  { value: "cms", label: "CMS" },
 ];
 
 const container = {

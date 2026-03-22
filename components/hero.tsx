@@ -174,7 +174,7 @@ export default function Hero() {
                 className="group rounded-full border-border hover:border-primary/50 transition-colors"
               >
                 <a
-                  href="/Rajan Shrestha Resume.pdf"
+                  href="/Rajan_CV.pdf"
                   download
                   className="flex items-center gap-2"
                 >
